@@ -1,0 +1,153 @@
+/* Layout principal */
+.layout {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: white;
+}
+
+/* Zone principale */
+main {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+/* Contenu de jeu */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Bouton de lancement */
+#start-button, #reset-button {
+    background: linear-gradient(to bottom, #02ff5b, #00cc44);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Barre de progression */
+#progress-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #02ff5b;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progress-label {
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Formulaire de réponse */
+#answer-form {
+    display: none;
+    width: 100%;
+    max-width: 400px;
+}
+
+#answer-form input {
+    background-color: transparent;
+    border: 2px solid #00cc44;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    width: 100%;
+    font-size: 16px;
+}
+
+#answer-form button {
+    margin-top: 10px;
+    background-color: #00cc44;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Lecteur invisible (seulement pour le son) */
+#player iframe {
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Compte à rebours */
+#countdown {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Miniature à la fin */
+#thumbnail-container {
+    display: none;
+    text-align: center;
+}
+
+#youtube-thumbnail {
+    max-width: 300px;
+    margin-top: 1em;
+}
+
+#track-title {
+    margin-top: 0.5em;
+}
+
+/* Joueurs (aside) */
+aside {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+aside h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+#online-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#online-list li {
+    margin-bottom: 8px;
+}

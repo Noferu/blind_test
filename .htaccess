@@ -1,0 +1,16 @@
+# 🔄 Redirection de index.html vers index.php
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ /index.php [R=301,L]
+
+# 🚫 Désactiver l'affichage de l’arborescence (listing de dossier)
+Options -Indexes
+
+# 🔐 Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ✨ Forcer l'encodage UTF-8
+AddDefaultCharset UTF-8
